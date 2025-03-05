@@ -13,6 +13,7 @@ export function Card({
 	description,
 	iconType,
 	onPressIcon,
+	bgcolor,
 	detach,
 }: CardProps) {
 	const isLow = value < 50; // Define se a cor deve ser alterada
@@ -21,6 +22,7 @@ export function Card({
 		<CardContainer
 			isLow={isLow}
 			detach={detach}
+			bgcolor={bgcolor}
 		>
 			{/* Ícone posicionado no canto superior esquerdo ou direito */}
 			<IconContainer

@@ -11,8 +11,6 @@ export async function getMeal(id: string) {
 			);
 			if (refeicaoEncontrada) {
 				return { ...refeicaoEncontrada, dia: refeicaoDoDia.dia }; // Retorna o dia para referência
-			} else {
-				throw new AppError("Refeição não encontrada");
 			}
 		}
 		return null;

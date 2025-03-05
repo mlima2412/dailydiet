@@ -105,6 +105,7 @@ export function NovaRefeicao() {
 			{""}
 			<NovaRefeicaoCard
 				value={0}
+				bgcolor={COLORS.gray_5}
 				title={editMode ? "Editar refeição" : "Nova refeição"}
 				onPressIcon={() => navigation.goBack()}
 			/>

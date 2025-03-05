@@ -4,11 +4,14 @@ import { TouchableOpacity } from "react-native";
 // Estilização do Card principal
 export const CardContainer = styled.View<{
 	isLow: boolean;
+	bgcolor?: string;
 }>`
 	align-items: center;
 	justify-content: center;
-	background-color: ${({ theme, isLow }) =>
-		isLow
+	background-color: ${({ theme, isLow, bgcolor }) =>
+		bgcolor
+			? bgcolor
+			: isLow
 			? theme.COLORS.red_mid
 			: theme.COLORS.green_mid}; // Vermelho claro se < 50, verde claro se >= 50
 	border-radius: 8px;
@@ -36,5 +39,6 @@ export const IconContainer = styled(TouchableOpacity)`
 export type CardProps = {
 	value: number;
 	title: string;
+	bgcolor?: string;
 	onPressIcon: () => void;
 };

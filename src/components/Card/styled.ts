@@ -9,14 +9,12 @@ type IconPosition = "ESQUERDA" | "DIREITA";
 export const CardContainer = styled.View<{
 	isLow: boolean;
 	detach?: boolean | false;
+	bgcolor?: string;
 }>`
 	align-items: center;
 	justify-content: center;
-	background-color: ${({ theme, isLow }) =>
-		isLow
-			? theme.COLORS.red_mid
-			: theme.COLORS.green_mid}; // Vermelho claro se < 50, verde claro se >= 50
-	//background-color: ${({ theme }) => theme.COLORS.red_mid};
+	background-color: ${({ theme, isLow, bgcolor }) =>
+		bgcolor ? bgcolor : isLow ? theme.COLORS.red_mid : theme.COLORS.green_mid};
 	border-radius: ${({ detach }) => (detach ? "8px" : "0px")};
 	padding: 16px 20px;
 	height: ${({ detach }) => (detach ? "102px" : "168px")};
@@ -53,6 +51,7 @@ export type CardProps = {
 	value: number;
 	description: string;
 	iconType: IconPosition;
+	bgcolor?: string;
 	detach?: boolean;
 	onPressIcon: () => void;
 };

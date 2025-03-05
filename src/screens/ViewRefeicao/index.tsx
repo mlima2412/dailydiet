@@ -72,6 +72,7 @@ export function ViewRefeicao() {
 	useEffect(() => {
 		async function fetchData() {
 			if (id) {
+				console.log("Buscando dados...", id);
 				const dados = await getMeal(id);
 				if (dados) {
 					setRefeicao(dados);
